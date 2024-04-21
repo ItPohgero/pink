@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import AppLayout from '../../components/PinkLava/AppLayout/Main'
 import { Color } from '../../utils/Color'
 import MenuData from '../../hardcode/sidebar'
+import { AppLayout } from '../../components'
 const meta = {
     title: 'PINK/AppLayout',
     component: AppLayout,

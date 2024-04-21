@@ -42,16 +42,18 @@ type Props = {
     moduleCallback: (e: any) => void
     moduleActive: string
 }
-const AppLayout: React.FC<PropsWithChildren<Props>> = ({
-    children,
-    menu,
-    logo = '/icons/logo-nabati.svg',
-    baseColor,
-    sidebarShow = true,
-    sidebarShowHeaderContent,
-    moduleCallback,
-    moduleActive,
-}) => {
+export function AppLayout(props: PropsWithChildren<Props>) {
+    const {
+        children,
+        menu,
+        logo = '/icons/logo-nabati.svg',
+        baseColor,
+        sidebarShow = true,
+        sidebarShowHeaderContent,
+        moduleCallback,
+        moduleActive,
+    } = props
+
     const [collapsed, setCollapsed] = useState<boolean>(false)
     const {
         token: { colorBgContainer },
