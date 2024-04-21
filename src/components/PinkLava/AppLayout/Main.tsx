@@ -1,10 +1,9 @@
 import React, { PropsWithChildren, ReactNode, useState } from 'react'
 import { AppstoreOutlined } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
-import { ConfigProvider, Image, Layout, theme } from 'antd'
+import { ConfigProvider, Image, Layout, Menu, theme } from 'antd'
 import { Else, If, Then } from 'react-if'
 import { Styles } from './Styles'
-import { BaseMenu } from './Styled'
 import { Color } from '../../../utils/Color'
 import { Icon } from '../../Icon'
 import {
@@ -13,6 +12,7 @@ import {
     MappingMenuModuleTitle,
     SubChildMenu,
 } from '../../../composables/MappingMenu'
+import styled from 'styled-components'
 
 const { Header, Content, Sider } = Layout
 
@@ -193,3 +193,17 @@ export function AppLayout(props: PropsWithChildren<Props>) {
 }
 
 export default AppLayout
+
+interface BaseMenuProps {
+    collapsed: string
+}
+
+const BaseMenu = styled(Menu)<BaseMenuProps>`
+    .ant-menu-item-group-title {
+        margin-left: 12px;
+        text-transform: uppercase;
+    }
+    .ant-menu-item-group {
+        display: ${({ collapsed }) => (collapsed?.toString() === 'true' ? 'none' : 'block')};
+    }
+`
