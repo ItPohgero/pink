@@ -128,15 +128,15 @@ export function AppLayout(props: PropsWithChildren<Props>) {
                                     className="flex h-7 w-7 items-center justify-center rounded bg-white/30"
                                     onClick={() => setCollapsed(!collapsed)}
                                 >
-                                    <Icon size={12} icon="arrowLeft" />
+                                    <Icon size={12} icon="arrowLeft" color="white" />
                                 </button>
                             </Then>
                             <Else>
                                 <button
-                                    className="mt-8 flex h-7 w-7 rotate-180 items-center justify-center rounded bg-white/30"
+                                    className="mt-8 flex h-7 w-7 items-center justify-center rounded bg-white/30"
                                     onClick={() => setCollapsed(!collapsed)}
                                 >
-                                    <Icon size={12} icon="arrowRight" />
+                                    <Icon size={12} icon="arrowRight" color="white" />
                                 </button>
                             </Else>
                         </If>
