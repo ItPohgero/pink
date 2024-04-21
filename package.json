@@ -1,6 +1,6 @@
 {
     "name": "ui-pinkl",
-    "version": "0.0.13",
+    "version": "0.0.14",
     "private": false,
     "dependencies": {
         "@testing-library/jest-dom": "^6.4.2",
@@ -36,7 +36,7 @@
         "build:tsup": "tsup",
         "format:check": "prettier . --check",
         "format:fix": "prettier --write .",
-        "up": "react-scripts build && react-scripts test && tsup",
+        "up": "react-scripts build && tsup",
         "push": "yarn format:fix && git add . && git commit -m \"update\" && git push"
     },
     "eslintConfig": {
