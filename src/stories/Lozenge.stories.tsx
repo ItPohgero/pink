@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Lozenge } from '../components'
 const meta = {
-    title: 'NIU/Action/Lozenge',
+    title: 'PINK/Action/Lozenge',
     component: Lozenge,
     tags: ['autodocs'],
 } satisfies Meta<typeof Lozenge>

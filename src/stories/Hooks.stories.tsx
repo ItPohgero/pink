@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TestHook } from '../hooks/TestHook'
 const meta = {
-    title: 'NIU/Hooks',
+    title: 'PINK/Hooks',
     component: TestHook,
     tags: ['autodocs'],
 } satisfies Meta<typeof TestHook>

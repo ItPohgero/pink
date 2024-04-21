@@ -6,7 +6,7 @@ import { ColumnsTable, DataTable, SummaryTable } from '../data/table'
 import { useSearch } from '../hooks/useSearch'
 
 const meta = {
-    title: 'NIU/Table/Core',
+    title: 'PINK/Table/Core',
     component: Table,
     tags: ['autodocs'],
 } as Meta<typeof Table>
