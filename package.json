@@ -37,7 +37,7 @@
         "format:check": "prettier . --check",
         "format:fix": "prettier --write .",
         "up": "react-scripts build && react-scripts test && tsup",
-        "push": "yarn format:fix && git add . && git commit -m \"update\" && npm version patch && git push"
+        "new:version": "yarn format:fix && git add . && git commit -m \"update\" && npm version patch -m \"Update version to %s\" && npm publish --access=public && git push"
     },
     "eslintConfig": {
         "extends": [
