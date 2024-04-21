@@ -1,6 +1,6 @@
 {
     "name": "ui-pinkl",
-    "version": "0.0.5",
+    "version": "0.0.3",
     "private": false,
     "dependencies": {
         "@testing-library/jest-dom": "^6.4.2",
@@ -37,7 +37,7 @@
         "format:check": "prettier . --check",
         "format:fix": "prettier --write .",
         "up": "react-scripts build && react-scripts test && tsup",
-        "new:version": "yarn format:fix && git add . && git commit -m \"update\" && npm version patch -m \"Update version to %s\" && npm publish --access=public && git push"
+        "push": "yarn format:fix && git add . && git commit -m \"update\" && npm version patch && git push"
     },
     "eslintConfig": {
         "extends": [
