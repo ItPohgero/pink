@@ -1,4 +1,4 @@
-import { ButtonProps } from "../../../interface/ButtonProps"
+import { ButtonProps } from '../../../interface/ButtonProps'
 
 export function Button(props: ButtonProps): any {
     const { onClick, type, variant, label = 'label here', size } = props
@@ -7,14 +7,12 @@ export function Button(props: ButtonProps): any {
         switch (e) {
             case 'primary':
                 return 'btn-primary'
-            case 'primary-line':
-                return 'btn-primary-line'
             case 'secondary':
                 return 'btn-secondary'
-            case 'secondary-line':
-                return 'btn-secondary-line'
+            case 'tertiary':
+                return 'btn-tertiary'
             default:
-                return 'btn-gost'
+                return 'btn-ghost'
         }
     }
 

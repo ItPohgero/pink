@@ -31,3 +31,17 @@ export const Secondary: Story = {
         variant: 'secondary',
     },
 }
+export const Tertiary: Story = {
+    args: {
+        type: 'button',
+        label: 'Button',
+        variant: 'tertiary',
+    },
+}
+export const Ghost: Story = {
+    args: {
+        type: 'button',
+        label: 'Button',
+        variant: 'ghost',
+    },
+}
