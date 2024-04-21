@@ -6,13 +6,13 @@ export function Button(props: ButtonProps): any {
     const Variant = (e: ButtonProps['variant']): string => {
         switch (e) {
             case 'primary':
-                return 'btn-primary'
+                return 'border-2 border-[#EB008B] bg-[#EB008B] text-white'
             case 'secondary':
-                return 'btn-secondary'
+                return 'border-2 border-[#FDE6F3] bg-[#FDE6F3] text-[#EB008B]'
             case 'tertiary':
-                return 'btn-tertiary'
+                return 'border-2 border-[#EB008B] bg-white text-[#EB008B]'
             default:
-                return 'btn-ghost'
+                return 'border-2 border-transparent bg-transparent text-[#EB008B]'
         }
     }
 
