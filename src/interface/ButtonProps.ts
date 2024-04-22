@@ -1,7 +1,12 @@
 export interface ButtonProps {
-    onClick?: () => void
-    type?: 'button' | 'submit' | 'reset'
-    variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost'
-    label?: string
-    size?: 'xxs' | 'xs' | 'sm' | 'lg' | 'xl' | 'xxl'
+    variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | any
+    size?: 'xtra' | 'big' | 'small' | any
+    children?: React.ReactNode
+    disabled?: boolean
+    full?: boolean
+    style?: any
+    redTheme?: boolean
+    iconLeft?: React.ReactNode
+    iconRight?: React.ReactNode
+    onClick?: any
 }

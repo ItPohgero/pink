@@ -1,24 +1,12 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 import { If, Then } from 'react-if'
 import { baseTheme } from '../data/baseTheme'
 import { TEXTSTYLES } from '../data/textStyles'
+import { ButtonProps } from '../interface/ButtonProps'
 
-interface ButtonProps {
-    variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost'
-    size?: 'small' | 'big' | 'xtra'
-    children: ReactNode
-    disabled?: boolean
-    full?: boolean
-    style?: React.CSSProperties
-    redTheme?: boolean
-    iconLeft?: ReactNode
-    iconRight?: ReactNode
-    onClick?: () => void
-}
-
-const SIZES = {
+const SIZES: any = {
     xtra: {
         '--height': '48px',
         '--padding': '0 16px',
@@ -42,79 +30,72 @@ const SIZES = {
     },
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-        {
-            variant = 'primary',
-            size = 'big',
-            children,
-            disabled,
-            full,
-            style,
-            redTheme,
-            iconLeft,
-            iconRight,
-            onClick,
-            ...props
-        },
-        ref,
-    ) => {
-        const styles = SIZES[size]
+export function Button(props: ButtonProps) {
+    const {
+        variant = 'primary',
+        size = 'big',
+        children,
+        disabled,
+        full,
+        style,
+        redTheme,
+        iconLeft,
+        iconRight,
+        onClick,
+    } = props
+    const styles = SIZES[size]
 
-        let Component: any
-        switch (variant) {
-            case 'primary':
-                Component = PrimaryButton
-                break
-            case 'secondary':
-                Component = SecondaryButton
-                break
-            case 'tertiary':
-                Component = TertiaryButton
-                break
-            case 'ghost':
-                Component = GhostButton
-                break
-            default:
-                throw new Error(`Unrecognized Button variant: ${variant}`)
-        }
+    let Component: any
+    switch (variant) {
+        case 'primary':
+            Component = PrimaryButton
+            break
+        case 'secondary':
+            Component = SecondaryButton
+            break
+        case 'tertiary':
+            Component = TertiaryButton
+            break
+        case 'ghost':
+            Component = GhostButton
+            break
+        default:
+            throw new Error(`Unrecognized Button variant: ${variant}`)
+    }
 
-        return (
-            <ThemeProvider theme={baseTheme}>
-                <Component
-                    ref={ref}
+    return (
+        <ThemeProvider theme={baseTheme}>
+            <Component
+                style={{
+                    ...styles,
+                    ...style,
+                }}
+                size={size}
+                disabled={disabled}
+                full={full}
+                redTheme={redTheme}
+                onClick={onClick}
+            >
+                <div
                     style={{
-                        ...styles,
-                        ...style,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 6,
                     }}
-                    size={size}
-                    disabled={disabled}
-                    full={full}
-                    redTheme={redTheme}
-                    onClick={onClick}
-                    {...props}
                 >
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            gap: 6,
-                        }}
-                    >
-                        <If condition={iconLeft !== null}>
-                            <Then>{iconLeft}</Then>
-                        </If>
-                        {children}
-                        <If condition={iconRight !== null}>
-                            <Then>{iconRight}</Then>
-                        </If>
-                    </div>
-                </Component>
-            </ThemeProvider>
-        )
-    },
-)
+                    <If condition={iconLeft !== null}>
+                        <Then>{iconLeft}</Then>
+                    </If>
+                    {children}
+                    <If condition={iconRight !== null}>
+                        <Then>{iconRight}</Then>
+                    </If>
+                </div>
+            </Component>
+        </ThemeProvider>
+    )
+}
 
 const ButtonBase = styled.button<{ full?: boolean }>`
     ${({ size }: any) => (size === 'big' ? TEXTSTYLES.button : TEXTSTYLES.buttonMobile)};
@@ -201,5 +182,3 @@ Button.propTypes = {
     onClick: PropTypes.func,
     full: PropTypes.bool,
 }
-
-export default Button
