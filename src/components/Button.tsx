@@ -1,4 +1,4 @@
-import { ButtonProps } from '../../../interface/ButtonProps'
+import { ButtonProps } from '../interface/ButtonProps'
 
 export function Button(props: ButtonProps): any {
     const { onClick, type, variant, label = 'label here', size } = props

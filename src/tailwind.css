@@ -1,18 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-    .btn-primary {
-        @apply border-2 border-[#EB008B] bg-[#EB008B] text-white;
-    }
-    .btn-secondary {
-        @apply border-2 border-[#FDE6F3] bg-[#FDE6F3] text-[#EB008B];
-    }
-    .btn-tertiary {
-        @apply border-2 border-[#EB008B] bg-white text-[#EB008B];
-    }
-    .btn-ghost {
-        @apply border-2 border-transparent bg-transparent text-[#EB008B];
-    }
-}
