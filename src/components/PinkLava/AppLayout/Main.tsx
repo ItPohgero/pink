@@ -41,6 +41,7 @@ type Props = {
     sidebarShowHeaderContent?: React.ReactNode
     moduleCallback: (e: any) => void
     moduleActive: string
+    minHeight?: string
 }
 export function AppLayout(props: PropsWithChildren<Props>) {
     const {
@@ -52,6 +53,7 @@ export function AppLayout(props: PropsWithChildren<Props>) {
         sidebarShowHeaderContent,
         moduleCallback,
         moduleActive,
+        minHeight = '100vh',
     } = props
 
     const [collapsed, setCollapsed] = useState<boolean>(false)
@@ -101,7 +103,7 @@ export function AppLayout(props: PropsWithChildren<Props>) {
                 },
             }}
         >
-            <Layout style={{ minHeight: '100vh' }}>
+            <Layout style={{ minHeight }}>
                 <Sider
                     hidden={!sidebarShow}
                     theme={'light'}
