@@ -1,7 +1,5 @@
 import { Collapse } from 'antd'
-import { useJWTDecode } from './useJwtDecode'
 import { CaretRightOutlined } from '@ant-design/icons'
-import { tokenExample } from '../data/jwtExample'
 import { useColor } from './useColor'
 import { useRandom } from './useRandom'
 import { useDay } from './useDay'
@@ -9,7 +7,6 @@ import { useClient, getData } from './useClient'
 import { useEffect, useState } from 'react'
 
 export function TestHook(): any {
-    const resJWT = useJWTDecode(tokenExample)
     const { Rose, Blue } = useColor()
     const resRandom = useRandom(20)
     const day = useDay()
@@ -40,11 +37,6 @@ export function TestHook(): any {
                 bordered={false}
                 expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
                 items={[
-                    {
-                        key: '1',
-                        label: 'useJWTDecode',
-                        children: <pre>{JSON.stringify(resJWT, null, 2)}</pre>,
-                    },
                     {
                         key: '2',
                         label: 'useColor',
