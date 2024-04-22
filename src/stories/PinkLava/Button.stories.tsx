@@ -1,14 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '../../components'
+import Button from '../../components/Button'
 const meta = {
     title: 'PINK/Button',
     component: Button,
     tags: ['autodocs'],
     argTypes: {
-        type: {
-            options: ['button', 'submit'],
-            control: { type: 'radio' },
-        },
         size: { control: { type: 'radio' } },
         onClick: { action: 'clicked' },
     },
@@ -19,29 +15,25 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
     args: {
-        type: 'button',
-        label: 'Button',
         variant: 'primary',
+        children: 'button',
     },
 }
 export const Secondary: Story = {
     args: {
-        type: 'button',
-        label: 'Button',
         variant: 'secondary',
+        children: 'button',
     },
 }
 export const Tertiary: Story = {
     args: {
-        type: 'button',
-        label: 'Button',
         variant: 'tertiary',
+        children: 'button',
     },
 }
 export const Ghost: Story = {
     args: {
-        type: 'button',
-        label: 'Button',
         variant: 'ghost',
+        children: 'button',
     },
 }
