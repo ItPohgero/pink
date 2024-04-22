@@ -36,7 +36,7 @@ export function Button(props: ButtonProps): any {
         <button
             type={type}
             onClick={onClick}
-            className={`rounded-full ${Variant(variant)} ${Size(size)}`}
+            className={`rounded-full bg-red-800 ${Variant(variant)} ${Size(size)}`}
         >
             {label}
         </button>
