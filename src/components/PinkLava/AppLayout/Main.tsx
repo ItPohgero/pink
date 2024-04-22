@@ -181,7 +181,7 @@ export function AppLayout(props: PropsWithChildren<Props>) {
                     <Content>
                         <If condition={!sidebarShow}>
                             <Then>
-                                <div className="bgfull fixed left-0 top-0 z-0 h-screen w-screen " />
+                                <div className="fixed left-0 top-0 z-0 h-screen w-screen bg-slate-300 " />
                             </Then>
                         </If>
                         <div className="relative z-10 p-4">{children}</div>
