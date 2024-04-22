@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 import { If, Then } from 'react-if'

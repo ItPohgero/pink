@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '../../components'
+import { ComponentType } from 'react'
+import { ButtonProps } from '../../interface/ButtonProps'
 const meta = {
     title: 'PINK/Button',
-    component: Button,
+    component: Button as ComponentType<ButtonProps>,
     tags: ['autodocs'],
     argTypes: {
         onClick: { action: 'clicked' },

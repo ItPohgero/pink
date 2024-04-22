@@ -1,6 +1,6 @@
 export interface ButtonProps {
-    variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | any
-    size?: 'xtra' | 'big' | 'small' | any
+    variant: 'primary' | 'secondary' | 'tertiary' | 'ghost'
+    size: 'xtra' | 'big' | 'small'
     children?: React.ReactNode
     disabled?: boolean
     full?: boolean
