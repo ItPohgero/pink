@@ -36,7 +36,7 @@
         "build:tsup": "tsup",
         "format:check": "prettier . --check",
         "format:fix": "prettier --write .",
-        "up": "react-scripts build && tsup",
+        "up": "yarn format:fix && react-scripts build && tsup",
         "push": "yarn format:fix && git add . && git commit -m \"update\" && git push"
     },
     "eslintConfig": {
